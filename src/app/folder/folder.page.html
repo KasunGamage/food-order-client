@@ -16,6 +16,32 @@
 
   <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
+        Components</a></p>
+
+    <form [formGroup]="testForm">
+   
+      <ion-item>
+        <ion-label position="floating">Title</ion-label>
+        <ion-input formControlName="title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Content</ion-label>
+        <ion-input formControlName="content"></ion-input>
+      </ion-item>
+      <ion-button shape="round" fill="outline" (click)="save()">Save</ion-button>
+
+    </form>
+
+
+    <!-- List of Text Items -->
+    <ion-list>
+      <ion-item *ngFor="let movie of list">
+        <ion-label> {{ movie.title }} </ion-label>
+        <ion-label> {{ movie.content }} </ion-label>
+      </ion-item>
+    </ion-list>
   </div>
+
 </ion-content>
