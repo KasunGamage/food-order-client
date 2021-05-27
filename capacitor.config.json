@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "food-order-client",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

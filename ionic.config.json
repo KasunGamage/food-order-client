@@ -1,0 +1,7 @@
+{
+  "name": "food-order-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
