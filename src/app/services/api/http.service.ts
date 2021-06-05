@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpService {
   constructor(private http: HttpClient) {}
@@ -20,15 +20,23 @@ export class HttpService {
     return this.http.get(url, this.createHeader(contentType));
   }
 
-  put(url: string, contentType = 'application/json'): Observable<any> {
-    return this.http.put(url, this.createHeader(contentType));
+  put(
+    url: string,
+    body: any,
+    contentType = 'application/json'
+  ): Observable<any> {
+    return this.http.put(url, body, this.createHeader(contentType));
+  }
+
+  delete(url: string, contentType = 'application/json'): Observable<any> {
+    return this.http.delete(url, this.createHeader(contentType));
   }
 
   private createHeader(contentType: string): any {
     return {
       headers: new HttpHeaders({
-        'Content-Type': contentType
-      })
+        'Content-Type': contentType,
+      }),
     };
   }
 }

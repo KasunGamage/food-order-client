@@ -2,18 +2,22 @@ import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToastService {
   toast: HTMLIonToastElement;
 
   constructor(public toastCtrl: ToastController) {}
 
-  async presentToastWithOptions(message: string, duration: number, position: any) {
+  async presentToastWithOptions(
+    message: string,
+    duration: number = 2000,
+    position: 'top' | 'bottom' | 'middle' = 'bottom'
+  ) {
     const toast = await this.toastCtrl.create({
       message,
       duration,
-      position
+      position,
     });
     toast.present();
   }
@@ -22,7 +26,7 @@ export class ToastService {
     this.toast = await this.toastCtrl.create({
       message: data,
       position: 'bottom',
-      color: 'danger'
+      color: 'danger',
     });
     this.toast.present();
   }
@@ -32,7 +36,7 @@ export class ToastService {
       message: data,
       duration,
       position: 'bottom',
-      color: 'success'
+      color: 'success',
     });
     toast.present();
   }
@@ -46,13 +50,10 @@ export class ToastService {
           text: 'Load',
           handler: () => {
             window.location.reload();
-          }
-        }
-      ]
+          },
+        },
+      ],
     });
     toast.present();
   }
-
-
-
 }

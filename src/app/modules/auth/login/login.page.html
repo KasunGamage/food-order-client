@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="userLoginForm">
+    <ion-item lines="full">
+      <ion-label position="floating">Mobile Number</ion-label>
+      <ion-input formControlName="mobile" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="sendVerificationCode()">Send Code</ion-button>
+        <a [routerLink]="['/forgot-password']" class="small-text">Are you a seller?</a>
+        <a [routerLink]="['/user-register']" class="small-text">Not registered yet?</a>
+      </ion-col>
+    </ion-row>
+
+    <ion-item lines="full" *ngIf="isVerificationCodeSend">
+      <ion-label position="floating">Verification Code</ion-label>
+      <ion-input [formControl]="verificationCode" type="number" required></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
