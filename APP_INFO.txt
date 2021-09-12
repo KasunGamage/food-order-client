@@ -1,0 +1,13 @@
+27/05/2021
+server - nodejs - done
+client - mobile - ionic
+
+https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
+
+how to run
+server - node --inspect server.js - with debugging 
+client - ionic serve
+
+sample app created
+connect server client
+repos created and pushed

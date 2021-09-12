@@ -39,11 +39,12 @@ export class LoginPage implements OnInit {
               'Verification code send Successfully!'
             );
             this.isVerificationCodeSend = true;
-          },
-          (err) => {
-            this.toastService.presentToastWithOptions('error occured!');
           }
         );
     }
+  }
+
+  verifiyCode(): void {
+    //
   }
 }

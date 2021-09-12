@@ -26,5 +26,11 @@
       <ion-label position="floating">Verification Code</ion-label>
       <ion-input [formControl]="verificationCode" type="number" required></ion-input>
     </ion-item>
+
+    <ion-row *ngIf="isVerificationCodeSend">
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="verifiyCode()">Verify</ion-button>
+      </ion-col>
+    </ion-row>
   </form>
 </ion-content>
